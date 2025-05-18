@@ -1,0 +1,26 @@
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Josefin Sans', sans-serif;
+      background-color: #f4f6fc;
+      color: #333;
+    }
+
+    header {
+      background-color: #ff7538;
+    }
+
+    #navbar,
+    footer {
+      background-color: #3c9477;
+      text-color: white;
+    }
+
+    .team-title {
+      color: #ea651e;
+    }
+    .border-green {
+      border-color: #4b9b82;
+    }
+    

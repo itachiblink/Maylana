@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maylana Supérette</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+  <header class="flex justify-between gap-5 px-8">
+    <img src="logo.png" alt="Logo Maylana Supérette" class="w-36" />
+    <div class="flex justify-center items-center">
+      <h1 class="text-white text-2xl font-bold">Bienvenue à la Maylana Supérette</h1>
+    </div>
+    <div></div>
+  </header>
+  <nav id="navbar" class="flex justify-center gap-7 py-2 font-bold text-white">
+    <a href="index.html">Accueil</a>
+    <a href="produits.html">Produits</a>
+    <a href="equipe.html">Notre Équipe</a>
+    <a href="recrutement.html">Recrutement</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="flex justify-center flex-wrap gap-4 my-6">
+    <button onclick="showTab('alimentaire', this)"
+      class="bg-[#3c9477] text-white font-bold text-lg px-5 py-2 rounded-full shadow-md hover:cursor-pointer hover:opacity-90 transition">
+      Alimentaire
+    </button>
+    <button onclick="showTab('outil', this)"
+      class="bg-[#3c9477] text-white font-bold text-lg px-5 py-2 rounded-full shadow-md hover:cursor-pointer hover:opacity-90 transition">
+      Outil
+    </button>
+    <button onclick="showTab('jardinage', this)"
+      class="bg-[#3c9477] text-white font-bold text-lg px-5 py-2 rounded-full shadow-md hover:cursor-pointer hover:opacity-90 transition">
+      Jardinage
+    </button>
+    <button onclick="showTab('pharma', this)"
+      class="bg-[#3c9477] text-white font-bold text-lg px-5 py-2 rounded-full shadow-md hover:cursor-pointer hover:opacity-90 transition">
+      Pharmaceutique
+    </button>
+  </div>
+
+  <div class="flex items-center justify-center my-8">
+    <div id="alimentaire" class="tab-content grid grid-cols-5 items-stretch gap-5">
+      <!-- Cartes produits alimentaires ici -->
+      <div
+        class="bg-white border-2 border-[#4b9b82] hover:border-[#ff7538] justify-center flex flex-col items-center gap-3 text-sm w-64 shadow-lg rounded-lg py-3">
+        <img src="produits/saucisson.png" />
+        <div class="text-center">
+          <div class="font-bold">Saucisson</div>
+          <div class="prix">20€</div>
+        </div>
+      </div>
+
+      <div
+        class="bg-white border-2 border-[#4b9b82] hover:border-[#ff7538] justify-center flex flex-col items-center gap-3 text-sm w-64 shadow-lg rounded-lg py-3">
+        <img src="produits/kebab.png" />
+        <div class="text-center">
+          <div class="font-bold">Kebab</div>
+          <div class="prix">20€</div>
+        </div>
+      </div>
+
+      <div
+        class="bg-white border-2 border-[#4b9b82] hover:border-[#ff7538] justify-center flex flex-col items-center gap-3 text-sm w-64 shadow-lg rounded-lg py-3">
+        <img src="produits/limonade.png" />
+        <div class="text-center">
+          <div class="font-bold">Limonade</div>
+          <div class="prix">15€</div>
+        </div>
+      </div>
+
+      <div
+        class="bg-white border-2 border-[#4b9b82] hover:border-[#ff7538] justify-center flex flex-col items-center gap-3 text-sm w-64 shadow-lg rounded-lg py-3">
+        <img src="produits/cafe.png" />
+        <div class="text-center">
+          <div class="font-bold">Café</div>
+          <div class="prix">15€</div>
+        </div>
+      </div>
+
+        <div
+    class="bg-white border-2 border-[#4b9b82] hover:border-[#ff7538] justify-center flex flex-col items-center gap-3 text-sm w-64 shadow-lg rounded-lg py-3">
+    <img src="produits/eau.png" />
+    <div class="text-center">
+      <div class="font-bold">Eau</div>
+      <div class="prix">10€</div>
+    </div>
+  </div>
+
+  <div
+    class="bg-white border-2 border-[#4b9b82] hover:border-[#ff7538] justify-center flex flex-col items-center gap-3 text-sm w-64 shadow-lg rounded-lg py-3">
+    <img src="produits/telephne.png" />
+    <div class="text-center">
+      <div class="font-bold">Bière</div>
+      <div class="prix">10€</div>
+    </div>
+  </div>
+
+    </div>
+
+    <div id="outil" class="tab-content hidden">
+      <div
+        class="bg-white border-2 border-green justify-center flex flex-col items-center gap-3 text-sm w-64 shadow-lg rounded-lg py-3">
+        <img src="produits/saucisso.png" />
+        <div class="text-center">
+          <div class="font-bold">Marteau</div>
+          <div class="prix">250€</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="jardinage" class="tab-content hidden">
+      <p>Jardinage ici.</p>
+    </div>
+
+    <div id="pharma" class="tab-content hidden">
+      <p>Pharmaceutique ici.</p>
+    </div>
+
+    <script>
+      function showTab(tabId, btn) {
+        // Cacher tous les contenus
+        document.querySelectorAll(".tab-content").forEach((div) => div.classList.add("hidden"));
+        // Afficher le contenu sélectionné
+        document.getElementById(tabId).classList.remove("hidden");
+
+        // Remettre tous les boutons en vert
+        document.querySelectorAll("button").forEach((button) => {
+          button.classList.remove("bg-orange-500");
+          button.classList.add("bg-[#3c9477]");
+        });
+
+        // Mettre le bouton actif en orange
+        btn.classList.remove("bg-[#3c9477]");
+        btn.classList.add("bg-orange-500");
+      }
+
+      // Afficher onglet Alimentaire au chargement
+      window.addEventListener("DOMContentLoaded", () => {
+        const firstBtn = document.querySelector('button[onclick^="showTab"]');
+        if (firstBtn) firstBtn.click();
+      });
+    </script>
+  </div>
+
+  <footer>
+    © 2025 Maylana Supérette – Tous droits réservés
+  </footer>
+</body>
+
+</html>
